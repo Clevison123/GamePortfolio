@@ -5,29 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Game Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <!-- Google Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <!--Icons Font-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
   <header>
-    <h1>My Game Portfolio</h1>
+    <h2>Game<span>Portfolio</span></h2>
     <nav>
       <ul aria-label="Main Navigation">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <button id="hamburger"><i class="fas fa-bars"></i></button>
   </header>
 
+  <nav id="sidebar">
+    <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="closeButton"><i class="fas fa-times"></i></button>
+</nav>
+
   <main>
-    <section aria-labelledby="welcome-heading">
+    <section id="about">
+      <h2>About</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequuntur non deleniti dolor facilis amet quo dolores esse ullam ducimus voluptatum? Illum dolorum qui ipsam maxime magnam dolores ea corrupti at.</p>
+    </section>
+
+    <section id="games" aria-labelledby="welcome-heading">
       <h2 id="welcome-heading">Welcome to My game Portfolio</h2>
       <p>Explore the games i have created and enjoy playing them!</p>
       <a href="games.html" class="btn">View Games</a>
     </section>
   </main>
 
-  <footer>
+  <footer id="contact">
+    <div class="container">
+      <ul>
+        <li><a href="https://wa.me/11997169087" class="link" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+        <li>
+          <a href="https://github.com/Clevison123" class="link" target="_blank"><i class="fab fa-github"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/jose_gregorio62/" class="link" target="_blank"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/clevison-defensor-476810235/" class="link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </li>
+      </ul>
+    </div>
     <p>&copy; 2025 My Game Portfolio. All rights reserved</p>
   </footer>
 
