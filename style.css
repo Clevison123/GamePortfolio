@@ -1,1 +1,23 @@
 @charset "UTF-8";
+
+:root{
+  --Font:'Inter', sans-serif;
+  --FontSizeTitulosMobile: 2rem; /* 32px*/
+  --FontSizeTextosMobile: 1rem; /* 16px*/
+  --FontSizeTitulosDesktop: 2.5rem; /* 40px */
+  --FontSizeTextosDesktop: 1.125rem; /*18px*/
+  --LineHeightTextos: 1.6;
+
+  --ColorText: #374151;
+  --ColorDestaquesButtons: #1e3a8a;
+  --ColorDetalhesHover: #fbbf24;
+  --ColorAlternativaHover: #D97706;
+  --ColorSection1: #e5e7eb;
+  --ColorSection2: #f0ede5;
+  --ColorBackground: #ffffff;
+  --ColorFooter: #1e3a8a;
+
+  --BoxShadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --BorderRadius: 8px;
+
+}
