@@ -10,13 +10,14 @@
 
   --ColorText: #374151;
   --ColorDestaquesButtons: #1e3a8a;
-  --ColorDetalhesHover: #fbbf24;
-  --ColorAlternativaHover: #D97706;
+  --ColorDetalhes: #fbbf24;
+  --ColorHover: #D97706;
   --ColorSection1: #e5e7eb;
   --ColorSection2: #f0ede5;
-  --ColorBackground: #ffffff;
+  --ColorBackground:  #6b7280;
   --ColorHeader: #111827;
-  --ColorFooter: #1e3a8a;
+  --ColorSidebar: #2d3748;
+  --ColorFooter: #4b5563;
 
   --BoxShadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   --BorderRadius: 8px;
@@ -42,9 +43,11 @@
   position: fixed;
   width: 100%;
   color: white;
-  padding: 1rem 0;
+  padding: 1rem 1%;
   background-color: var(--ColorHeader);
   box-shadow: var(--BoxShadow);
+  border-bottom: 1px solid transparent;
+  transition: all 0.45s ease;
 }
 
 .container_nav ul{
@@ -55,28 +58,69 @@
 }
 
 .container_nav h2 span {
-  color: var(--ColorDetalhesHover);
+  color: var(--ColorDetalhes);
 }
 
 #hamburger{
-  color: var(--ColorDetalhesHover);
+  color: var(--ColorDetalhes);
   font-size: 1.5rem;
   background: none;
   border: none;
-}
-
-#closeButton{
-  color: red;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-}
-
-section{
-  height: 80vh;
-  width: 100%;
 }
 
 #sidebar{
-  display: none;
+  position: fixed;
+  top: 4.470rem;
+  right: 0;
+  width: 130px;
+  height: 60%;
+  background: var(--ColorHeader);
+  transition: right 0.3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+  box-shadow: var(--BoxShadow);
+  border-radius: 0 0 0 var(--BorderRadius);
 }
+
+#sidebar ul{
+  padding: 2.70rem 1.25rem;
+}
+
+#sidebar ul li{
+  color: var(--ColorDetalhes);
+  margin-bottom: 1.125rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--BorderRadius);
+  transition: all 0.3s ease;
+}
+
+#sidebar ul li:hover{
+  background-color: var(--ColorBackground);
+}
+
+#closeButton{
+  position: absolute;
+  top: 0;
+  right: 0.625rem;
+  color: var(--ColorDetalhes);
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#closeButton:hover{
+  color: var(--ColorHover);
+  transition: all .3s ease;
+}
+
+section{
+  height: calc(75vh - 10px);
+  width: calc(100% - 40px);
+  margin: auto;
+}
+
+#home{
+  padding-top: 6rem;
+}
+
