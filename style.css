@@ -67,21 +67,27 @@
   background: none;
   border: none;
   transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
 }
 
-
 .hidden {
-  display: none;
+  visibility: hidden;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease-in-out;
 }
 
+#hamburger:hover{
+  color: var(--ColorHover);
+  transition: all .3s ease;
+}
+
 #sidebar{
   position: fixed;
-  top: 4.470rem;
+  top: 4.5rem;
   right: -130px;
   width: 130px;
+  padding: 2.7rem 1.25rem;
   height: 60%;
   background: var(--ColorHeader);
   transition: right 0.3s ease;
@@ -95,20 +101,20 @@
   right: 0;
 }
 
-#sidebar ul{
-  padding: 2.70rem 1.25rem;
+#sidebar ul li{
+  border-radius: var(--BorderRadius);
 }
 
-#sidebar ul li{
+#sidebar ul li a{
+  display: block;
   color: var(--ColorDetalhes);
-  margin-bottom: 1.125rem;
   padding: 0.5rem 0.75rem;
-  border-radius: var(--BorderRadius);
-  transition: all 0.3s ease;
+  margin-bottom: 1.125rem;
 }
 
 #sidebar ul li:hover{
   background-color: var(--ColorBackground);
+  transition: all 0.3s ease;
 }
 
 #closeButton{

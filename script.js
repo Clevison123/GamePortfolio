@@ -1,71 +1,49 @@
-// Função para deslocamento suave até o destino ao clicar nos links
-function smoothScroll(event) {
-  event.preventDefault();
-  const targetElement = this.getAttribute('href').substr(1);
-  const target = document.getElementById(targetElement);
-  const contentOffset = 50; 
-
-  if (target) {
-    const targetOffset = target.offsetTop - contentOffset;
-    window.scrollTo({
-      top: targetOffset,
-      behavior: "smooth"
-    })
-  }
-}
-
-// Adicionar o evento de clique aos links da barra de rolagem
-const navLinks = document.querySelectorAll('.navList a');
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener('click', scrollToTarget);
-}
-
-// Eventos para abri e fechar minha navList
-// Desing Pattern
+// Events to open and close my navList
+// Design Pattern
 const menuModule = (function() {
-  // Variáveis privadas
+  // Private variables
   let menuIcon = document.getElementById('hamburger');
   let sideBar = document.getElementById('sidebar');
   let closeButton = document.getElementById('closeButton');
-  let navList = document.querySelector('#sidebar a');
+  let navList = document.querySelectorAll('#sidebar a');
 
-  // Função para alternar a sidebar e esconder/mostrar o hamburger
+  // Function to toggle the sidebar and hide/show the hamburger menu
   function toggleSidebar() {
     sideBar.classList.toggle('show');
-    menuIcon.classList.toggle('hidden') // Esconde o hamburger quando o sidebar abre
+    menuIcon.classList.toggle('hidden') // Hides the hamburger when the sidebar opens
   }
   
   function closeSidebar() {
-    sideBar.classList.remove('show')
-    menuIcon.classList.remove('hidden') // Mostra o hamburger quando o sidebar fecha
+    sideBar.classList.remove('show');
+    menuIcon.classList.remove('hidden'); // Shows the hamburger when the sidebar closes
   }
 
-  // Função para fechar o sidebar quando um link for clicado
+  // Function to close the sidebar when a link is clicked
   function closeNavList() {
     closeSidebar();
   }
 
-  // Função para fechar o sidebar ao clicar fora dele
+  // Function to close the sidebar when clicking outside of it
   function closeSidebarOutside(event) {
     if (!sideBar.contains(event.target) && !menuIcon.contains(event.target)) {
       closeSidebar();
     }
   }
 
-  // Expondo a interface pública (métodos)
+  // Exposing the public interface (methods)
   return {
     init: function() {
       menuIcon.addEventListener('click', toggleSidebar);
       closeButton.addEventListener('click', closeSidebar);
       window.addEventListener('click', closeSidebarOutside);
 
-      // Adiciona evento aos links dentro do sidebar
-      navLinks.forEach((link) => {
+      // Adds event to the links inside the sidebar
+      navList.forEach((link) => {
         link.addEventListener('click', closeNavList);
       });
     },
   };
 })();
 
-// Inicializando o módulo
+// Initializing the menuModule
 menuModule.init();
