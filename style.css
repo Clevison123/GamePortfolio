@@ -8,12 +8,12 @@
   --FontSizeTextosDesktop: 1.125rem; /*18px*/
   --LineHeightTextos: 1.6;
 
-  --ColorText: #374151;
+  --ColorText: #d1d5db;
   --ColorDestaquesButtons: #1e3a8a;
   --ColorDetalhes: #fbbf24;
   --ColorHover: #D97706;
-  --ColorSection1: #e5e7eb;
-  --ColorSection2: #f0ede5;
+  --ColorSection1: #252a41;
+  --ColorSection2: #1f2a4a;
   --ColorBackground:  #6b7280;
   --ColorHeader: #111827;
   --ColorSidebar: #2d3748;
@@ -142,5 +142,21 @@ section{
 
 #home{
   padding-top: 6rem;
+  background-color: var(--ColorSection1);
+  color: var(--ColorText);
 }
 
+#about{
+  background-color: var(--ColorSection2);
+  color: var(--ColorText);
+}
+
+#games{
+  background-color: var(--ColorSection1);
+  color: var(--ColorText);
+}
+
+#contact{
+  background-color: var(--ColorSection2);
+  color: var(--ColorText);
+}
