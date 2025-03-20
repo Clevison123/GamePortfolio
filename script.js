@@ -47,3 +47,78 @@ const menuModule = (function() {
 
 // Initializing the menuModule
 menuModule.init();
+
+
+// Home Slides
+// Design Pattern: Self-Executing Module (IIFE)
+const sliderModule = (function () {
+  // Select all slide images for both desktop and mobile
+  const desktopSlides = document.querySelectorAll('.slide-desktop');
+  const mobileSlides = document.querySelectorAll('.slide-mobile');
+  let currentSlide = 0; // Index of the current slide
+
+  /**
+   * Displays the slide corresponding to the given index.
+   * Hides all other slides.
+   * @param {number} slideIndex - The index of the slide to display.
+   */
+  function showSlides(slideIndex) {
+    [desktopSlides, mobileSlides].forEach((slides) => {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle('active', index === slideIndex);
+      });
+    });
+  }
+
+  /**
+   * Moves to the next slide in the sequence.
+   * Loops back to the first slide after the last one.
+   */
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % desktopSlides.length;
+    showSlides(currentSlide);
+  }
+
+  /**
+   * Moves to the previous slide in the sequence.
+   * Loops back to the last slide if on the first one.
+   */
+  function previousSlide() {
+    currentSlide = (currentSlide - 1 + desktopSlides.length) % desktopSlides.length;
+    showSlides(currentSlide);
+  }
+
+  /**
+   * Automatically advances slides every 5 seconds.
+   */
+  function startAutoSlide() {
+    setInterval(nextSlide, 5000);
+  }
+
+  /**
+   * Attaches event listeners to navigation buttons.
+   * Listens for clicks on "next" and "previous" buttons.
+   */
+  function attachEvents() {
+    document.querySelector('.next-btn')?.addEventListener('click', nextSlide);
+    document.querySelector('.prev-btn')?.addEventListener('click', previousSlide);
+  }
+
+  /**
+   * Initializes the slider:
+   * - Displays the first slide
+   * - Attaches event listeners
+   * - Starts auto-sliding
+   */
+  function init() {
+    showSlides(currentSlide);
+    attachEvents();
+    startAutoSlide();
+  }
+
+  // Exposes the init function to be called externally
+  return { init };
+})();
+
+// Initialize the slider
+sliderModule.init();
