@@ -173,3 +173,36 @@ const GameCarrousel = (function () {
 
 // Initialize the carousel when the page loads
 document.addEventListener('DOMContentLoaded', GameCarrousel.init);
+
+
+// Footer
+const BackToTopModule = (() => {
+  const backToTop = document.getElementById("backToTop");
+
+  // Function to handle scroll event
+  const handleScroll = () => {
+    if (window.scrollY > 300) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  };
+
+  // Function to scroll smoothly to the top
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  // Event listeners
+  const init = () => {
+    window.addEventListener("scroll", handleScroll);
+    backToTop.addEventListener("click", scrollToTop);
+  };
+
+  return {
+    init,
+  };
+})();
+
+// Initialize the BackToTopModule
+document.addEventListener("DOMContentLoaded", BackToTopModule.init);
