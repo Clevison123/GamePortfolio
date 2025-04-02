@@ -145,7 +145,7 @@ section{
 }
 
 /* section home*/
-#home{
+#home {
   background-color: var(--ColorSection1);
   color: var(--ColorText);
   position: relative;
@@ -154,6 +154,18 @@ section{
   justify-content: flex-start;
   box-shadow: var(--BoxShadow);
   overflow: hidden;
+  height: 87vh;
+}
+
+#home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7));
+  z-index: 1;
 }
 
 .slides {
@@ -164,54 +176,49 @@ section{
   height: 100%;
 }
 
-.slide-mobile,
-.slide-desktop {
+.slides picture {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease-in-out;
 }
 
-.slide-mobile.active,
-.slide-desktop.active {
+.slides picture.active {
   opacity: 1;
+  transform: scale(1.05);
 }
 
-.slide-mobile img,
-.slide-desktop img {
+.slides img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-position: center; 
+  min-width: 100%;
+  min-height: 100%;
 }
-
-img.slide-mobile{display: block;}
-img.slide-desktop{display: none;}
 
 .controls {
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
   left: 50%;
-  transform: translate(-50%);
-  z-index: 1;
+  transform: translateX(-50%);
+  z-index: 2;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-.prev-btn,
-.next-btn {
-  background: none ;
+.prev-btn, .next-btn {
+  background: none;
   border: none;
   color: white;
   font-size: clamp(40px, 5vw, 90px);
-  max-width: 0;
-  margin: auto 30px;
+  margin: 0 30px;
   cursor: pointer;
 }
+
 
 /* About Section*/
 #about{
@@ -243,21 +250,24 @@ img.slide-desktop{display: none;}
   margin-bottom: 1rem;
 }
 
-#about img {
-  margin: 1rem 0;
-  border: 2px solid var(--ColorDetalhes);
-  max-width: 90%;
+.about-image{
+  display: block;
+  width: 90%;
+  max-width: 400px;
   height: auto;
+  margin: 1.5rem;
+  border: 2px solid var(--ColorDetalhes);
   border-radius: var(--BorderRadius);
   box-shadow: var(--BoxShadow);
-  transition: transform 0.3 ease-in-out, var(--BoxShadow) 0.3s ease-in-out;
+  transition: transform 0.3 ease-in-out, BoxShadow 0.3s ease-in-out;
 }
-
 
 .about-desktop{
   display: none;
 }
 
+
+/* Games Section*/
 #games{
   background-color: var(--ColorSection1);
   color: var(--ColorText);

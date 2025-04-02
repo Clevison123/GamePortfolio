@@ -26,7 +26,7 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <button id="hamburger"><i class="fas fa-bars"></i></button>
+    <button id="hamburger"  aria-label="Open menu"><i class="fas fa-bars"></i></button>
   </header>
 
   <nav id="sidebar">
@@ -39,45 +39,60 @@
     <button id="closeButton"><i class="fas fa-times"></i></button>
 </nav>
 
-  <main>
+  <main aria-labelledby="main-heading">
     <section id="home">
       <div class="slides">
-        <img src="slides_img_mobile/img-mobile-1.jpg" alt="" class="slide-mobile active">
-        <img src="slides_img_mobile/img-mobile-2.jpg" alt="" class="slide-mobile">
-        <img src="slides_img_mobile/img-mobile-3.jpg" alt="" class="slide-mobile">
-        <img src="slides_img_mobile/img-mobile-4.jpg" alt="" class="slide-mobile">
-        <img src="slides_img_mobile/img-mobile-5.jpg" alt="" class="slide-mobile">
+        <picture class="slide">
+          <source srcset="slides_img_desktop/img-desktop-1.jpg" media="(min-width: 768px)">
+          <img src="slides_img_mobile/img-mobile-1.jpg" alt="Slide 1" class="active">
+        </picture>
+    
+        <picture class="slide">
+          <source srcset="slides_img_desktop/img-desktop-2.jpg" media="(min-width: 768px)">
+          <img src="slides_img_mobile/img-mobile-2.jpg" alt="Slide 2">
+        </picture>
+    
+        <picture class="slide">
+          <source srcset="slides_img_desktop/img-desktop-3.jpg" media="(min-width: 768px)">
+          <img src="slides_img_mobile/img-mobile-3.jpg" alt="Slide 3">
+        </picture>
+    
+        <picture class="slide">
+          <source srcset="slides_img_desktop/img-desktop-4.jpg" media="(min-width: 768px)">
+          <img src="slides_img_mobile/img-mobile-4.jpg" alt="Slide 4">
+        </picture>
+    
+        <picture class="slide">
+          <source srcset="slides_img_desktop/img-desktop-5.jpg" media="(min-width: 768px)">
+          <img src="slides_img_mobile/img-mobile-5.jpg" alt="Slide 5">
+        </picture>
       </div>
-
-      <div class="slides">
-        <img src="slides_img_desktop/img-desktop-1.jpg" alt="" class="slide-desktop active">
-        <img src="slides_img_desktop/img-desktop-2.jpg" alt="" class="slide-desktop">
-        <img src="slides_img_desktop/img-desktop-3.jpg" alt="" class="slide-desktop">
-        <img src="slides_img_desktop/img-desktop-4.jpg" alt="" class="slide-desktop">
-        <img src="slides_img_desktop/img-desktop-5.jpg" alt="" class="slide-desktop">
-      </div>
-
+    
       <div class="controls">
         <button class="prev-btn">&#8249;</button>
         <button class="next-btn">&#8250;</button>
       </div>
     </section>
+    
+    
 
-    <section id="about">
-      <h2>About</h2>
-      <p>Bem-vindo à minha galeria de jogos! 🚀 Aqui você encontrará uma coleção de jogos desenvolvidos por mim, combinando criatividade, desafio e diversão. Cada jogo foi criado utilizando HTML, CSS e JavaScript, sempre buscando oferecer uma experiência envolvente e dinâmica.</p>
-      <!-- img mobile-->
-      <img class="about-mobile" src="imgs_games/about.jpg" alt="">
-
-      <p>Meu objetivo é aprender, evoluir e compartilha  projetos incríveis com a comunidade. Fique à vontade  para explorar, jogar e deixar seu feedback! 🎲✨
-      👉 Novos jogos serão adicionados em breve! Fique de  olho nas atualizações.</p>
-
-      <!-- img desktop-->
-      <img class="about-desktop" src="imgs_games/about.jpg" alt="">
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Welcome to my game gallery! 🚀 Here you will find a collection of games developed by me, combining creativity, challenge, and fun. Each game was created using HTML, CSS, and JavaScript, always aiming to provide an engaging and dynamic experience.</p>
+      
+      <!-- Responsive Image -->
+      <picture>
+        <source srcset="imgs_games/about.jpg" media="(min-width: 768px)">
+        <img class="about-image" src="imgs_games/about.jpg" alt="About Image">
+      </picture>
+    
+      <p>My goal is to learn, evolve, and share amazing projects with the community. Feel free to explore, play, and leave your feedback! 🎲✨  
+      👉 New games will be added soon! Stay tuned for updates.</p>
     </section>
+    
 
-    <section id="games" aria-labelledby="welcome-heading">
-      <h2 id="welcome-heading">My Game Portfolio</h2>
+    <section id="games" aria-labelledby="games-heading">
+      <h2 id="games-heading">My Game Portfolio</h2>
       <p>Explore the games i have created and enjoy playing them!</p>
 
       <div class="game-slider">
@@ -124,21 +139,33 @@
 
   <footer id="contact">
     <div class="container_footer">
-      <ul>
-        <li><a href="https://wa.me/11997169087" class="link" target="_blank"><i class="fab fa-whatsapp"></i></a></li>
+      <h2 class="sr-only">Contact and Social Media</h2>
+      <ul aria-label="Social Media Links">
         <li>
-          <a href="https://github.com/Clevison123" class="link" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://wa.me/11997169087" class="link" target="_blank" aria-label="Contact me on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+          </a>
         </li>
         <li>
-          <a href="https://www.instagram.com/jose_gregorio62/" class="link" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://github.com/Clevison123" class="link" target="_blank" aria-label="Visit my GitHub profile">
+            <i class="fab fa-github"></i>
+          </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/clevison-defensor-476810235/" class="link" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.instagram.com/jose_gregorio62/" class="link" target="_blank" aria-label="Visit my Instagram profile">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/clevison-defensor-476810235/" class="link" target="_blank" aria-label="Visit my LinkedIn profile">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
         </li>
       </ul>
     </div>
     <p>&copy; 2025 My Game Portfolio. All rights reserved</p>
   </footer>
+  
 
   <script src="script.js"></script>
 </body>

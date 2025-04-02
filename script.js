@@ -49,50 +49,49 @@ const menuModule = (function() {
 menuModule.init();
 
 
-// Home Slides
-// Design Pattern: Self-Executing Module (IIFE)
+// Home slides module
 const sliderModule = (function () {
-  // Select all slide images for both desktop and mobile
-  const desktopSlides = document.querySelectorAll('.slide-desktop');
-  const mobileSlides = document.querySelectorAll('.slide-mobile');
-  let currentSlide = 0; // Index of the current slide
+  // Selects all <picture> elements inside .slides
+  const slides = document.querySelectorAll('.slides picture');  
+  let currentSlide = 0; // Stores the index of the current slide
+  let autoSlideInterval; // Stores the interval for automatic sliding
 
   /**
    * Displays the slide corresponding to the given index.
-   * Hides all other slides.
+   * Hides all other slides by toggling the 'active' class.
    * @param {number} slideIndex - The index of the slide to display.
    */
   function showSlides(slideIndex) {
-    [desktopSlides, mobileSlides].forEach((slides) => {
-      slides.forEach((slide, index) => {
-        slide.classList.toggle('active', index === slideIndex);
-      });
+    slides.forEach((slide, index) => {
+      slide.classList.toggle('active', index === slideIndex);
     });
   }
 
   /**
    * Moves to the next slide in the sequence.
-   * Loops back to the first slide after the last one.
+   * If the last slide is reached, it loops back to the first slide.
    */
   function nextSlide() {
-    currentSlide = (currentSlide + 1) % desktopSlides.length;
+    currentSlide = (currentSlide + 1) % slides.length;
     showSlides(currentSlide);
   }
 
   /**
    * Moves to the previous slide in the sequence.
-   * Loops back to the last slide if on the first one.
+   * If the first slide is reached, it loops back to the last slide.
    */
   function previousSlide() {
-    currentSlide = (currentSlide - 1 + desktopSlides.length) % desktopSlides.length;
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlides(currentSlide);
   }
 
   /**
-   * Automatically advances slides every 5 seconds.
+   * Starts the automatic slide transition.
+   * Clears any existing interval to avoid multiple instances.
    */
   function startAutoSlide() {
-    setInterval(nextSlide, 5000);
+    clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(nextSlide, 5000); // Changes slide every 5 seconds
   }
 
   /**
@@ -108,7 +107,7 @@ const sliderModule = (function () {
    * Initializes the slider:
    * - Displays the first slide
    * - Attaches event listeners
-   * - Starts auto-sliding
+   * - Starts automatic sliding
    */
   function init() {
     showSlides(currentSlide);
@@ -120,40 +119,57 @@ const sliderModule = (function () {
   return { init };
 })();
 
-// Initialize the slider
+// Initialize the slider on page load
 sliderModule.init();
 
 
-// Games Carrousel
+// Games Carousel module
 const GameCarrousel = (function () {
-  let currentIndex = 0;
-  const gameGallery = document.querySelector('.game-gallery');
-  const games = document.querySelectorAll('.game');
-  const prevButton = document.getElementById('prev');
-  const nextButton = document.getElementById('next');
+  let currentIndex = 0; // Stores the index of the current game slide
+  const gameGallery = document.querySelector('.game-gallery'); // Selects the game gallery container
+  const games = document.querySelectorAll('.game'); // Selects all game elements
+  const prevButton = document.getElementById('prev'); // Selects the previous button
+  const nextButton = document.getElementById('next'); // Selects the next button
 
+  /**
+   * Updates the carousel position based on the current index.
+   * Moves the gallery horizontally using CSS transform.
+   */
   function updateCarrousel() {
-    const offset = -currentIndex * 100;
-    gameGallery.style.transform = `translateX(${offset}%)`;
+    const offset = -currentIndex * 100; // Calculates the new position
+    gameGallery.style.transform = `translateX(${offset}%)`; // Moves the gallery
   }
 
+  /**
+   * Moves to the next game slide in the carousel.
+   * Loops back to the first slide if the last one is reached.
+   */
   function nextSlideBtn() {
     currentIndex = (currentIndex + 1) % games.length;
     updateCarrousel();
   }
 
+  /**
+   * Moves to the previous game slide in the carousel.
+   * Loops back to the last slide if the first one is reached.
+   */
   function prevSlideBtn() {
     currentIndex = (currentIndex - 1 + games.length) % games.length;
     updateCarrousel();
   }
 
+  /**
+   * Initializes the carousel:
+   * - Attaches event listeners to navigation buttons.
+   */
   function init() {
     prevButton.addEventListener('click', prevSlideBtn);
     nextButton.addEventListener('click', nextSlideBtn);
   }
 
+  // Exposes the init function to be called externally
   return { init };
 })();
 
-// Initialize the carrousel
+// Initialize the carousel when the page loads
 document.addEventListener('DOMContentLoaded', GameCarrousel.init);
