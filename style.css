@@ -3,6 +3,7 @@
 :root{
   --FontFamily:'Inter', sans-serif;
   --FontSizeTitulosMobile: 2rem; /* 32px*/
+  --FontSizeH3Mobile: 1.5rem; /* 24px*/
   --FontSizeTextosMobile: 1rem; /* 16px*/
   --FontSizeTitulosDesktop: 2.5rem; /* 40px */
   --FontSizeTextosDesktop: 1.125rem; /*18px*/
@@ -136,8 +137,8 @@
 }
 
 section{
-  scroll-margin-top: 4rem;
-  padding: 1rem 10% 3rem;
+  scroll-margin-top: 3rem;
+  padding: 3.8rem 10% 3rem;
   height: 87vh;
   width: 100% ;
   margin: auto;
@@ -260,7 +261,103 @@ img.slide-desktop{display: none;}
 #games{
   background-color: var(--ColorSection1);
   color: var(--ColorText);
+  text-align: center;
+  overflow: hidden;
 }
+
+#games h2, #games h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+#games h2{
+  font-size: var(--FontSizeTitulosMobile);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+#games h3{
+  font-size: var(--FontSizeH3Mobile);
+  font-weight: 200;
+  margin-top: 1rem;
+  margin-bottom: .7rem;
+}
+
+#games p {
+  font-size: var(--FontSizeTextosMobile);
+  max-width: 600px;
+  line-height: var(--LineHeightTextos);
+  text-align: justify;
+  hyphens: auto;
+  word-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.game-slider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.game-gallery {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+  max-width: 400px;
+}
+
+.game{
+  min-width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.game img {
+  max-width: 80%;
+  margin: auto;
+  display: block;
+  border: 3px solid var(--ColorDetalhes);
+  border-radius: var(--BorderRadius);
+  box-shadow: var(--BoxShadow);
+  cursor: pointer;
+}
+
+#button-wrapper{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 2rem;
+  font-size: clamp(40px, 5vw, 90px);
+}
+
+.btn, .custom-button {
+  background-color: var(--ColorDestaquesButtons);
+  color: white;
+  border-radius: var(--BorderRadius);
+  cursor: pointer;
+  transition: background-color 0.3s, color o.3s, transform 0.2;
+}
+
+.custom-button{
+  padding: 10px 15px;
+  font-size: 1.5rem;
+}
+
+.btn{
+  width: 100px;
+  height: 100px;
+  padding: .5rem;
+  border: 2px solid var(--ColorDetalhes);
+}
+
+.custom-button:hover, .btn:hover{
+  background-color: var(--ColorHover);
+  transition: all 0.3s ;
+}
+
 
 #contact{
   background-color: var(--ColorSection2);

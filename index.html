@@ -40,7 +40,6 @@
 </nav>
 
   <main>
-
     <section id="home">
       <div class="slides">
         <img src="slides_img_mobile/img-mobile-1.jpg" alt="" class="slide-mobile active">
@@ -78,9 +77,48 @@
     </section>
 
     <section id="games" aria-labelledby="welcome-heading">
-      <h2 id="welcome-heading">Welcome to My game Portfolio</h2>
+      <h2 id="welcome-heading">My Game Portfolio</h2>
       <p>Explore the games i have created and enjoy playing them!</p>
-      <a href="games.html" class="btn">View Games</a>
+
+      <div class="game-slider">
+        <div class="game-gallery">
+          <div class="game">
+            <a href="#">
+              <img src="imgs_games/memory_game.png" alt="Memory Game">
+            </a>
+            <h3>Memory Game</h3>
+          </div>
+          <div class="game">
+            <a href="#">
+              <img src="imgs_games/ping_pong.png" alt="Ping pong">
+            </a>
+            <h3>Ping Pong</h3>
+          </div>
+          <div class="game">
+            <a href="#">
+              <img src="imgs_games/rock_paper_scissors.png" alt="Rock paper scissors">
+            </a>
+            <h3>Rock-Paper-Scissors</h3>
+          </div>
+          <div class="game">
+            <a href="#">
+              <img src="imgs_games/sneak_game.png" alt="Sneak Game">
+            </a>
+            <h3>Sneak Game</h3>
+          </div>
+        </div>
+      </div>
+
+      <div id="button-wrapper">
+        <button id="prev" class="custom-button">
+          <i class="fas fa-angle-double-left"></i>
+        </button>
+        <button id="next" class="custom-button">
+          <i class="fas fa-angle-double-right"></i>
+        </button>
+      </div>
+
+      <a href="games.html" class="btn" target="_blank">More Games</a>
     </section>
   </main>
 

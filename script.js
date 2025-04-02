@@ -122,3 +122,38 @@ const sliderModule = (function () {
 
 // Initialize the slider
 sliderModule.init();
+
+
+// Games Carrousel
+const GameCarrousel = (function () {
+  let currentIndex = 0;
+  const gameGallery = document.querySelector('.game-gallery');
+  const games = document.querySelectorAll('.game');
+  const prevButton = document.getElementById('prev');
+  const nextButton = document.getElementById('next');
+
+  function updateCarrousel() {
+    const offset = -currentIndex * 100;
+    gameGallery.style.transform = `translateX(${offset}%)`;
+  }
+
+  function nextSlideBtn() {
+    currentIndex = (currentIndex + 1) % games.length;
+    updateCarrousel();
+  }
+
+  function prevSlideBtn() {
+    currentIndex = (currentIndex - 1 + games.length) % games.length;
+    updateCarrousel();
+  }
+
+  function init() {
+    prevButton.addEventListener('click', prevSlideBtn);
+    nextButton.addEventListener('click', nextSlideBtn);
+  }
+
+  return { init };
+})();
+
+// Initialize the carrousel
+document.addEventListener('DOMContentLoaded', GameCarrousel.init);
