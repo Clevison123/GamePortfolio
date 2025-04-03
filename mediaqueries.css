@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+/* ========================== */
+/* 🌍 GLOBAL STYLES (MOBILE FIRST) */
+/* ========================== */
+body {
+  font-size: 16px;
+}
+
+/* ================================= */
+/* 📱 SMALL DEVICES (PHONES) */
+/* ================================= */
+/* Maioria dos smartphones (iPhone SE, Galaxy S8, etc.) */
+@media (max-width: 320px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+/* Smartphones médios (iPhone X, Galaxy S20, Pixel 5) */
+@media (min-width: 321px) and (max-width: 480px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+/* ================================= */
+/* 📟 MEDIUM DEVICES (TABLETS) */
+/* ================================= */
+/* Tablets pequenos (iPad Mini, Kindle Fire, etc.) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* Tablets grandes (iPad Air, iPad Pro 9.7") */
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+/* ================================= */
+/* 💻 LARGE DEVICES (LAPTOPS & DESKTOPS) */
+/* ================================= */
+/* Notebooks pequenos (MacBook Air, Surface Pro) */
+@media (min-width: 1025px) and (max-width: 1366px) {
+  body {
+    font-size: 18px;
+  }
+}
+
+/* Monitores full HD (Desktops padrão, iMac 21") */
+@media (min-width: 1367px) and (max-width: 1920px) {
+  body {
+    font-size: 19px;
+  }
+}
+
+/* ================================= */
+/* 🖥️ EXTRA LARGE SCREENS (4K & 8K) */
+/* ================================= */
+/* Telas 4K (iMac 27", monitores gamers 4K) */
+@media (min-width: 1921px) and (max-width: 2560px) {
+  body {
+    font-size: 20px;
+  }
+}
+
+/* Telas 8K e maiores */
+@media (min-width: 2561px) {
+  body {
+    font-size: 22px;
+  }
+}
