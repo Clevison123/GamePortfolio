@@ -1,9 +1,7 @@
 const SmoothScrollModule = (() => {
   "use strict";
 
-  /* 
-  *Initializes the smooth scrolling functionality.
-  */
+  /* Initializes the smooth scrolling functionality */
   function init() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener("click", handleClick);
@@ -11,10 +9,9 @@ const SmoothScrollModule = (() => {
   }
 
   /**
-     * Handles the click event to smoothly scroll to the target section.
-     * @param {Event} event - The click event object.
-     */
-
+   * Handles the click event to smoothly scroll to the target section.
+   * @param {Event} event - The click event object.
+   */
   function handleClick(event) {
     event.preventDefault();
 
@@ -27,28 +24,31 @@ const SmoothScrollModule = (() => {
   }
 
   /**
-     * Scrolls smoothly to the target element, considering the header height.
-     * @param {HTMLElement} targetElement - The target section element.
-     */
+   * Scrolls smoothly to the target element, considering the header height.
+   * @param {HTMLElement} targetElement - The target section element.
+   */
   function scrollToTarget(targetElement) {
-    const headerHeight = document.querySelector(".container_nav").offsetHeight;
+    const header = document.querySelector(".container_nav");
+    const headerHeight = header ? header.offsetHeight : 0; // Get header height if it exists
+    const extraOffset = -8; // Adjust if needed
     const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-    const offsetPosition = elementPosition - headerHeight;
+    const offsetPosition = elementPosition - headerHeight - extraOffset;
 
     window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
+      top: offsetPosition,
+      behavior: "smooth"
     });
-}
+  }
 
-// Expose the init function
-return {
+  // Expose the init function
+  return {
     init
-};
+  };
 })();
 
 // Initialize the smooth scroll module when the DOM content is fully loaded
 document.addEventListener("DOMContentLoaded", SmoothScrollModule.init);
+
 
 // Events to open and close my navList
 // Design Pattern

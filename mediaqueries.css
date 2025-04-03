@@ -3,32 +3,141 @@
 /* ================================= */
 /* 📱 SMALL DEVICES (PHONES) */
 /* ================================= */
-/* Maioria dos smartphones (iPhone SE, Galaxy S8, etc.) */
-@media (max-width: 320px) {
-  body {
-    font-size: 14px;
+
+/* 📱 Smartphones pequenos (iPhone SE, Galaxy S8, etc.) */
+@media (max-width: 320px){
+
+  .container_nav h2{
+    font-size: 1.5rem;
   }
+  
+  #hamburger{
+    font-size: 1.1rem;
+  }
+
+  #about h2{
+    font-size: 1.5rem;
+  }
+
+  #about p{
+    font-size: .7rem;
+  }
+
+  .about-image{
+    width: 80%;
+  }
+
+  #games h2{
+    font-size: 1.5rem;
+  }
+
+  #games p{
+    font-size: .7rem;
+  }
+  
+  #games h3{
+    font-size: 1.2rem;
+  }
+
+  .game img {
+    max-width: 55%;
+  }
+
+  #button-wrapper{
+    margin-bottom: 1rem;
+  }
+
+  .custom-button{
+    font-size: .7rem;
+  }
+
+  .btn{
+    width: 50px;
+    height: 50px;
+    padding: .3rem;
+  }
+
+  footer{
+    padding: 1rem 0;
+  }
+
+  .container_footer a{
+    font-size: 1.4rem;
+  }
+
+  footer p{
+    font-size: .7rem;
+  }
+
+  #backToTop {
+    font-size: 1rem;
+  }
+
 }
 
-/* Smartphones médios (iPhone X, Galaxy S20, Pixel 5) */
-@media (min-width: 321px) and (max-width: 480px) {
-  body {
-    font-size: 15px;
+/* 📱 Smartphones médios (iPhone X, Galaxy S20, Pixel 5) */
+@media (min-width: 321px) and (max-width: 480px){
+  
+  .about-image{
+    width: 90%;
+  }
+
+  #about p{
+    font-size: 1.1rem;
+  }
+
+  #games h2{
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  #games p{
+    margin: 2rem 0;
+  }
+
+  .game img {
+    max-width: 80%;
+  }
+
+  .container_footer a{
+    font-size: 1.5rem;
+  }
+
+  footer p{
+    font-size: 1rem;
   }
 }
 
 /* ================================= */
 /* 📟 MEDIUM DEVICES (TABLETS) */
 /* ================================= */
-/* Tablets pequenos (iPad Mini, Kindle Fire, etc.) */
-@media (min-width: 481px) and (max-width: 768px) {
-  body {
-    font-size: 16px;
+
+/* 📟 Tablets pequenos (iPad Mini, Kindle Fire, etc.) */
+@media (min-width: 481px) and (max-width: 768px){
+  #about p{
+    font-size: 1.3rem;
+  }
+
+  #games h2{
+    margin-top: 1.5rem;
+  }
+
+  #games p{
+    margin: 2rem 0;
+    font-size: 1.3rem;
+  }
+
+  .container_footer a{
+    font-size: 2rem;
+  }
+
+  footer p{
+    font-size: 1.3rem;
   }
 }
 
-/* Tablets grandes (iPad Air, iPad Pro 9.7") */
-@media (min-width: 769px) and (max-width: 1024px) {
+/* 📟 Tablets grandes (iPad Air, iPad Pro 9.7") */
+@media (min-width: 769px) and (max-width: 1024px){
   body {
     font-size: 17px;
   }
@@ -37,15 +146,16 @@
 /* ================================= */
 /* 💻 LARGE DEVICES (LAPTOPS & DESKTOPS) */
 /* ================================= */
-/* Notebooks pequenos (MacBook Air, Surface Pro) */
-@media (min-width: 1025px) and (max-width: 1366px) {
+
+/* 💻 Notebooks pequenos (MacBook Air, Surface Pro) */
+@media (min-width: 1025px) and (max-width: 1366px){
   body {
     font-size: 18px;
   }
 }
 
-/* Monitores full HD (Desktops padrão, iMac 21") */
-@media (min-width: 1367px) and (max-width: 1920px) {
+/* 🖥️ Monitores Full HD (Desktops padrão, iMac 21") */
+@media (min-width: 1367px) and (max-width: 1920px){
   body {
     font-size: 19px;
   }
@@ -54,15 +164,16 @@
 /* ================================= */
 /* 🖥️ EXTRA LARGE SCREENS (4K & 8K) */
 /* ================================= */
-/* Telas 4K (iMac 27", monitores gamers 4K) */
-@media (min-width: 1921px) and (max-width: 2560px) {
+
+/* 🖥️ Telas 4K (iMac 27", monitores gamers 4K) */
+@media (min-width: 1921px) and (max-width: 2560px){
   body {
     font-size: 20px;
   }
 }
 
-/* Telas 8K e maiores */
-@media (min-width: 2561px) {
+/* 🖥️ Telas 8K e maiores */
+@media (min-width: 2561px){
   body {
     font-size: 22px;
   }

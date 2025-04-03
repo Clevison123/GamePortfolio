@@ -90,7 +90,7 @@
 
 #sidebar{
   position: fixed;
-  top: 4.5rem;
+  top: 3.8rem;
   right: -150px;
   width: 150px;
   padding: 2.7rem 1.25rem;
@@ -141,7 +141,7 @@
 }
 
 section{
-  scroll-margin-top: 5rem;
+  scroll-margin-top: 2rem;
   height: 87vh;
   width: 100% ;
   margin: auto;
@@ -413,7 +413,7 @@ footer p {
   position: fixed;
   bottom: 1.3rem;
   right: 1.3rem;
-  background-color: var(--ColorDestaquesButtons);
+  background: transparent;
   color: white;
   border: none;
   padding: .8rem 1rem;
