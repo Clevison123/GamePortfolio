@@ -1,3 +1,55 @@
+const SmoothScrollModule = (() => {
+  "use strict";
+
+  /* 
+  *Initializes the smooth scrolling functionality.
+  */
+  function init() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", handleClick);
+    });
+  }
+
+  /**
+     * Handles the click event to smoothly scroll to the target section.
+     * @param {Event} event - The click event object.
+     */
+
+  function handleClick(event) {
+    event.preventDefault();
+
+    const targetID = this.getAttribute("href");
+    const targetElement = document.querySelector(targetID);
+
+    if (targetElement) {
+      scrollToTarget(targetElement);
+    }
+  }
+
+  /**
+     * Scrolls smoothly to the target element, considering the header height.
+     * @param {HTMLElement} targetElement - The target section element.
+     */
+  function scrollToTarget(targetElement) {
+    const headerHeight = document.querySelector(".container_nav").offsetHeight;
+    const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+    const offsetPosition = elementPosition - headerHeight;
+
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+    });
+}
+
+// Expose the init function
+return {
+    init
+};
+})();
+
+// Initialize the smooth scroll module when the DOM content is fully loaded
+document.addEventListener("DOMContentLoaded", SmoothScrollModule.init);
+
 // Events to open and close my navList
 // Design Pattern
 const menuModule = (function() {
