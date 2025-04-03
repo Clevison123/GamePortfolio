@@ -1,5 +1,30 @@
 @charset "UTF-8";
 
+:root{
+  --FontFamily:'Inter', sans-serif;
+  --FontSizeTitulosMobile: 2rem; /* 32px*/
+  --FontSizeH3Mobile: 1.5rem; /* 24px*/
+  --FontSizeTextosMobile: 1rem; /* 16px*/
+  --FontSizeTitulosDesktop: 2.5rem; /* 40px */
+  --FontSizeTextosDesktop: 1.125rem; /*18px*/
+  --LineHeightTextos: 1.6;
+
+  --ColorText: #d1d5db;
+  --ColorDestaquesButtons: #1e3a8a;
+  --ColorDetalhes: #fbbf24;
+  --ColorHover: #D97706;
+  --ColorSection1: #252a41;
+  --ColorSection2: #1f2a4a;
+  --ColorBackground:  #6b7280;
+  --ColorHeader: #111827;
+  --ColorSidebar: #2d3748;
+  --ColorFooter: #4b5563;
+
+  --BoxShadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --BorderRadius: 8px;
+
+}
+
 /* ================================= */
 /* 📱 SMALL DEVICES (PHONES) */
 /* ================================= */
@@ -138,9 +163,51 @@
 
 /* 📟 Tablets grandes (iPad Air, iPad Pro 9.7") */
 @media (min-width: 769px) and (max-width: 1024px){
-  body {
-    font-size: 17px;
+  #hamburger, #sidebar{
+    display: none;
   }
+
+  #nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #nav ul{
+    display: flex;
+    gap: 2rem;
+  }
+
+  #about h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #about p{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  .about-image{
+    width: 100%;
+  }
+  
+  #games h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #games p{
+    font-size: var(--FontSizeTextosDesktop);
+    margin: 2rem 0;
+  }
+
+  .container_footer a{
+    font-size: 2rem;
+  }
+
+  footer p{
+    font-size: 1.3rem;
+  }
+
+  
 }
 
 /* ================================= */
