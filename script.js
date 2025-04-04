@@ -182,10 +182,18 @@ const GameCarrousel = (function () {
   const games = document.querySelectorAll('.game'); // Selects all game elements
   const prevButton = document.getElementById('prev'); // Selects the previous button
   const nextButton = document.getElementById('next'); // Selects the next button
-  let itemsPerView = 1;
+  let itemsPerView = 3;
 
   function updateItemsPerView() {
-    itemsPerView = window.innerWidth >= 769 ? 2 : 1;
+    if (window.innerWidth >= 1367) {
+      itemsPerView = games.length; 
+    } else if (window.innerWidth >= 1025) {
+      itemsPerView = 3;
+    } else if (window.innerWidth >= 768) {
+      itemsPerView = 2;
+    } else {
+      itemsPerView = 1;
+    }
   }
 
   /**

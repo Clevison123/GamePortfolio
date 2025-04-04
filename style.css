@@ -6,12 +6,14 @@
 
 :root{
   --FontFamily:'Inter', sans-serif;
-  --FontSizeTitulosMobile: clamp(1.5rem, 5vw, 2rem); /* 32px*/
-  --FontSizeH3Mobile: clamp(1.5rem, 5vw, 2rem); /* 24px*/
-  --FontSizeTextosMobile: clamp(.7rem, 2.5vw, 1.25rem); /* 16px*/
-  --FontSizeTitulosDesktop: clamp(2rem, 5vw, 2.5rem); /* 40px */
-  --FontSizeTextosDesktop: clamp(1rem, 2.5vw, 1.25rem); /*18px*/
-  --LineHeightTextos: 1.6;
+  --FontSizeTitulosMobile: clamp(1.5rem, 4.5vw, 2rem);
+  --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); /* 24px*/
+  --FontSizeTextosMobile: clamp(0.9rem, 2.5vw, 1.1rem);
+  --FontSizeTitulosDesktop: clamp(2rem, 3.5vw, 2.8rem); 
+  --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 
+  --LineHeightTextos: 1.5 - 1.7;
+  --ButtonsMenuMobile: clamp(0.85rem, 2vw, 1rem);
+  --ButtonsMenuDeskTop: clamp(1rem, 1.5vw, 1.125rem);
 
   --ColorText: #d1d5db;
   --ColorDestaquesButtons: #1e3a8a;

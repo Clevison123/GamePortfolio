@@ -2,12 +2,14 @@
 
 :root{
   --FontFamily:'Inter', sans-serif;
-  --FontSizeTitulosMobile: clamp(1.5rem, 5vw, 2rem); /* 32px*/
+  --FontSizeTitulosMobile: clamp(1.5rem, 4.5vw, 2rem);
   --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); /* 24px*/
-  --FontSizeTextosMobile: clamp(.7rem, 2.5vw, 1.25rem); /* 16px*/
-  --FontSizeTitulosDesktop: clamp(2rem, 5vw, 2.5rem); /* 40px */
-  --FontSizeTextosDesktop: clamp(1rem, 2.5vw, 1.25rem); /*18px*/
-  --LineHeightTextos: 1.6;
+  --FontSizeTextosMobile: clamp(0.9rem, 2.5vw, 1.1rem);
+  --FontSizeTitulosDesktop: clamp(2rem, 3.5vw, 2.8rem); 
+  --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 
+  --LineHeightTextos: 1.5 - 1.7;
+  --ButtonsMenuMobile: clamp(0.85rem, 2vw, 1rem);
+  --ButtonsMenuDeskTop: clamp(1rem, 1.5vw, 1.125rem);
 }
 
 /* ================================= */
@@ -22,7 +24,7 @@
   }
   
   #hamburger{
-    font-size: 1.1rem;
+    font-size: var(--ButtonsMenuMobile);
   }
 
   #about h2{
@@ -42,7 +44,7 @@
   }
 
   #games p{
-    font-size: .7rem;
+    font-size: var(--FontSizeTextosMobile);
   }
   
   #games h3{
@@ -58,7 +60,7 @@
   }
 
   .custom-button{
-    font-size: .7rem;
+    font-size: var(--ButtonsMenuMobile);
   }
 
   .btn{
@@ -72,7 +74,7 @@
   }
 
   .container_footer a{
-    font-size: var(--FontSizeTextosDesktop);
+    font-size: var(--ButtonsMenuMobile);
   }
 
   footer p{
@@ -80,7 +82,7 @@
   }
 
   #backToTop {
-    font-size: 1rem;
+    font-size: var(--ButtonsMenuMobile);
   }
 
 }
@@ -115,7 +117,7 @@
   }
 
   .container_footer a{
-    font-size: var(--FontSizeTextosDesktop);
+    font-size: var(--ButtonsMenuMobile);
   }
 
   footer p{
@@ -135,16 +137,18 @@
   }
 
   #games h2{
+    font-size: var(--FontSizeTitulosMobile);
     margin-top: 1.5rem;
   }
 
   #games p{
-    margin: 2rem 0;
+    text-align: center;
+    margin: 2rem auto;
     font-size: var(--FontSizeTextosMobile);
   }
 
   .container_footer a{
-    font-size: var(--FontSizeTextosDesktop);
+    font-size: var(--ButtonsMenuMobile);
   }
 
   footer p{
@@ -204,8 +208,6 @@
     max-width: 50%;
   }
 
-  
-
   .custom-button{
     font-size: .7rem;
     padding: .5rem;
@@ -218,7 +220,7 @@
   }
 
   .container_footer a{
-    font-size: var(--FontSizeTextosDesktop);
+    font-size: var(--ButtonsMenuDeskTop);
   }
 
   footer p{
@@ -234,15 +236,144 @@
 
 /* 💻 Notebooks pequenos (MacBook Air, Surface Pro) */
 @media (min-width: 1025px) and (max-width: 1366px){
-  body {
-    font-size: 18px;
+  #hamburger, #sidebar{
+    display: none;
+  }
+
+  #nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #nav ul{
+    display: flex;
+    gap: 2rem;
+  }
+  
+
+  #about h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #about p{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  .about-image{
+    width: 100%;
+  }
+  
+  #games h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #games p{
+    font-size: var(--FontSizeTextosDesktop);
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .game-gallery {
+    max-width: none;
+  }
+
+  .game {
+    min-width: 33.333%; 
+  }
+
+  .game img {
+    max-width: 50%;
+  }
+
+  .custom-button{
+    font-size: .7rem;
+    padding: .5rem;
+  }
+
+  .btn{
+    width: 20px;
+    height: 20px;
+    padding: .1rem;
+  }
+
+  .container_footer a{
+    font-size: var(--ButtonsMenuDeskTop);
+  }
+
+  footer p{
+    font-size: var(--FontSizeTextosDesktop);
   }
 }
 
 /* 🖥️ Monitores Full HD (Desktops padrão, iMac 21") */
 @media (min-width: 1367px) and (max-width: 1920px){
-  body {
-    font-size: 19px;
+  #hamburger, #sidebar{
+    display: none;
+  }
+
+  #nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #nav ul{
+    display: flex;
+    gap: 2rem;
+  }
+  
+
+  #about h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #about p{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  .about-image{
+    width: 100%;
+  }
+  
+  #games h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #games p{
+    font-size: var(--FontSizeTextosDesktop);
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .game-gallery {
+    max-width: none;
+  }
+
+  .game {
+    min-width: 25%; 
+  }
+
+  .game img {
+    max-width: 70%;
+  }
+
+  #prev, #next {
+    display: none;
+  }
+
+  .btn{
+    width: 50px;
+    height: 50px;
+    padding: .5rem;
+  }
+
+  .container_footer a{
+    font-size: var(--ButtonsMenuDeskTop);
+  }
+
+  footer p{
+    font-size: var(--FontSizeTextosDesktop);
   }
 }
 
@@ -252,14 +383,141 @@
 
 /* 🖥️ Telas 4K (iMac 27", monitores gamers 4K) */
 @media (min-width: 1921px) and (max-width: 2560px){
-  body {
-    font-size: 20px;
+  #hamburger, #sidebar{
+    display: none;
+  }
+
+  #nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #nav ul{
+    display: flex;
+    gap: 2rem;
+  }
+  
+
+  #about h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #about p{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  .about-image{
+    width: 100%;
+  }
+  
+  #games h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #games p{
+    font-size: var(--FontSizeTextosDesktop);
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .game-gallery {
+    max-width: none;
+  }
+
+  .game {
+    min-width: 25%; 
+  }
+
+  .game img {
+    max-width: 75%;
+  }
+
+  #prev, #next {
+    display: none;
+  }
+
+  .btn{
+    width: 100px;
+    height: 100px;
+    padding: 1rem;
+  }
+
+  .container_footer a{
+    font-size: var(--ButtonsMenuDeskTop);
+  }
+
+  footer p{
+    font-size: var(--FontSizeTextosDesktop);
   }
 }
 
 /* 🖥️ Telas 8K e maiores */
 @media (min-width: 2561px){
-  body {
-    font-size: 22px;
+  #hamburger, #sidebar{
+    display: none;
+  }
+
+  #nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  #nav ul{
+    display: flex;
+    gap: 2rem;
+  }
+  
+
+  #about h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #about p{
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  .about-image{
+    width: 100%;
+  }
+  
+  #games h2{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  #games p{
+    font-size: var(--FontSizeTextosDesktop);
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .game-gallery {
+    max-width: none;
+  }
+
+  .game {
+    min-width: 25%; 
+  }
+
+  .game img {
+    max-width: 75%;
+  }
+
+  #prev, #next {
+    display: none;
+  }
+
+  .btn{
+    width: 100px;
+    height: 100px;
+    padding: 1rem;
+  }
+  .container_footer a{
+    font-size: var(--ButtonsMenuDeskTop);
+  }
+
+  footer p{
+    font-size: var(--FontSizeTextosDesktop);
   }
 }
