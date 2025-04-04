@@ -2,27 +2,12 @@
 
 :root{
   --FontFamily:'Inter', sans-serif;
-  --FontSizeTitulosMobile: 2rem; /* 32px*/
-  --FontSizeH3Mobile: 1.5rem; /* 24px*/
-  --FontSizeTextosMobile: 1rem; /* 16px*/
-  --FontSizeTitulosDesktop: 2.5rem; /* 40px */
-  --FontSizeTextosDesktop: 1.125rem; /*18px*/
+  --FontSizeTitulosMobile: clamp(1.5rem, 5vw, 2rem); /* 32px*/
+  --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); /* 24px*/
+  --FontSizeTextosMobile: clamp(.7rem, 2.5vw, 1.25rem); /* 16px*/
+  --FontSizeTitulosDesktop: clamp(2rem, 5vw, 2.5rem); /* 40px */
+  --FontSizeTextosDesktop: clamp(1rem, 2.5vw, 1.25rem); /*18px*/
   --LineHeightTextos: 1.6;
-
-  --ColorText: #d1d5db;
-  --ColorDestaquesButtons: #1e3a8a;
-  --ColorDetalhes: #fbbf24;
-  --ColorHover: #D97706;
-  --ColorSection1: #252a41;
-  --ColorSection2: #1f2a4a;
-  --ColorBackground:  #6b7280;
-  --ColorHeader: #111827;
-  --ColorSidebar: #2d3748;
-  --ColorFooter: #4b5563;
-
-  --BoxShadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  --BorderRadius: 8px;
-
 }
 
 /* ================================= */
@@ -33,7 +18,7 @@
 @media (max-width: 320px){
 
   .container_nav h2{
-    font-size: 1.5rem;
+    font-size: var(--FontSizeTitulosMobile);
   }
   
   #hamburger{
@@ -41,11 +26,11 @@
   }
 
   #about h2{
-    font-size: 1.5rem;
+    font-size: var(--FontSizeTitulosMobile);
   }
 
   #about p{
-    font-size: .7rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 
   .about-image{
@@ -53,7 +38,7 @@
   }
 
   #games h2{
-    font-size: 1.5rem;
+    font-size: var(--FontSizeTitulosMobile);
   }
 
   #games p{
@@ -61,7 +46,7 @@
   }
   
   #games h3{
-    font-size: 1.2rem;
+    font-size: var(--FontSizeH3Mobile);
   }
 
   .game img {
@@ -87,11 +72,11 @@
   }
 
   .container_footer a{
-    font-size: 1.4rem;
+    font-size: var(--FontSizeTextosDesktop);
   }
 
   footer p{
-    font-size: .7rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 
   #backToTop {
@@ -102,17 +87,22 @@
 
 /* 📱 Smartphones médios (iPhone X, Galaxy S20, Pixel 5) */
 @media (min-width: 321px) and (max-width: 480px){
+
   
   .about-image{
     width: 90%;
   }
 
+  #about h2{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
   #about p{
-    font-size: 1.1rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 
   #games h2{
-    font-size: 1.5rem;
+    font-size: var(--FontSizeTitulosMobile);
     margin-top: 1.5rem;
   }
 
@@ -125,11 +115,11 @@
   }
 
   .container_footer a{
-    font-size: 1.5rem;
+    font-size: var(--FontSizeTextosDesktop);
   }
 
   footer p{
-    font-size: 1rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 }
 
@@ -139,8 +129,9 @@
 
 /* 📟 Tablets pequenos (iPad Mini, Kindle Fire, etc.) */
 @media (min-width: 481px) and (max-width: 768px){
+
   #about p{
-    font-size: 1.3rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 
   #games h2{
@@ -149,15 +140,15 @@
 
   #games p{
     margin: 2rem 0;
-    font-size: 1.3rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 
   .container_footer a{
-    font-size: 2rem;
+    font-size: var(--FontSizeTextosDesktop);
   }
 
   footer p{
-    font-size: 1.3rem;
+    font-size: var(--FontSizeTextosMobile);
   }
 }
 
@@ -177,6 +168,7 @@
     display: flex;
     gap: 2rem;
   }
+  
 
   #about h2{
     font-size: var(--FontSizeTitulosDesktop);
@@ -196,15 +188,41 @@
 
   #games p{
     font-size: var(--FontSizeTextosDesktop);
-    margin: 2rem 0;
+    text-align: center;
+    margin: 2rem auto;
+  }
+
+  .game-gallery {
+    max-width: none;
+  }
+
+  .game {
+    min-width: 50%; 
+  }
+
+  .game img {
+    max-width: 50%;
+  }
+
+  
+
+  .custom-button{
+    font-size: .7rem;
+    padding: .5rem;
+  }
+
+  .btn{
+    width: 20px;
+    height: 20px;
+    padding: .1rem;
   }
 
   .container_footer a{
-    font-size: 2rem;
+    font-size: var(--FontSizeTextosDesktop);
   }
 
   footer p{
-    font-size: 1.3rem;
+    font-size: var(--FontSizeTextosDesktop);
   }
 
   

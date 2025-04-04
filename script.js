@@ -182,13 +182,18 @@ const GameCarrousel = (function () {
   const games = document.querySelectorAll('.game'); // Selects all game elements
   const prevButton = document.getElementById('prev'); // Selects the previous button
   const nextButton = document.getElementById('next'); // Selects the next button
+  let itemsPerView = 1;
+
+  function updateItemsPerView() {
+    itemsPerView = window.innerWidth >= 769 ? 2 : 1;
+  }
 
   /**
    * Updates the carousel position based on the current index.
    * Moves the gallery horizontally using CSS transform.
    */
   function updateCarrousel() {
-    const offset = -currentIndex * 100; // Calculates the new position
+    const offset = (-currentIndex * (100 / itemsPerView)); // Calculates the new position
     gameGallery.style.transform = `translateX(${offset}%)`; // Moves the gallery
   }
 
@@ -197,7 +202,11 @@ const GameCarrousel = (function () {
    * Loops back to the first slide if the last one is reached.
    */
   function nextSlideBtn() {
-    currentIndex = (currentIndex + 1) % games.length;
+    if (currentIndex < games.length - itemsPerView) {
+      currentIndex++;
+    } else {
+      currentIndex = 0;
+    }
     updateCarrousel();
   }
 
@@ -206,7 +215,11 @@ const GameCarrousel = (function () {
    * Loops back to the last slide if the first one is reached.
    */
   function prevSlideBtn() {
-    currentIndex = (currentIndex - 1 + games.length) % games.length;
+    if (currentIndex > 0) {
+      currentIndex--;
+    } else {
+      currentIndex = games.length - itemsPerView;
+    }
     updateCarrousel();
   }
 
@@ -215,8 +228,19 @@ const GameCarrousel = (function () {
    * - Attaches event listeners to navigation buttons.
    */
   function init() {
+    updateItemsPerView();
+    updateCarrousel();
+
     prevButton.addEventListener('click', prevSlideBtn);
     nextButton.addEventListener('click', nextSlideBtn);
+
+    window.addEventListener('resize', () => {
+      updateItemsPerView();
+      if (currentIndex > games.length - itemsPerView) {
+        currentIndex = games.length - itemsPerView;
+      }
+      updateCarrousel();
+    });
   }
 
   // Exposes the init function to be called externally

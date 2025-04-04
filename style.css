@@ -6,11 +6,11 @@
 
 :root{
   --FontFamily:'Inter', sans-serif;
-  --FontSizeTitulosMobile: 2rem; /* 32px*/
-  --FontSizeH3Mobile: 1.5rem; /* 24px*/
-  --FontSizeTextosMobile: 1rem; /* 16px*/
-  --FontSizeTitulosDesktop: 2.5rem; /* 40px */
-  --FontSizeTextosDesktop: 1.125rem; /*18px*/
+  --FontSizeTitulosMobile: clamp(1.5rem, 5vw, 2rem); /* 32px*/
+  --FontSizeH3Mobile: clamp(1.5rem, 5vw, 2rem); /* 24px*/
+  --FontSizeTextosMobile: clamp(.7rem, 2.5vw, 1.25rem); /* 16px*/
+  --FontSizeTitulosDesktop: clamp(2rem, 5vw, 2.5rem); /* 40px */
+  --FontSizeTextosDesktop: clamp(1rem, 2.5vw, 1.25rem); /*18px*/
   --LineHeightTextos: 1.6;
 
   --ColorText: #d1d5db;
@@ -38,6 +38,11 @@
   list-style: none;
   text-decoration: none;
   scroll-behavior: smooth;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 
@@ -141,7 +146,7 @@
 
 section{
   scroll-margin-top: 2rem;
-  height: 87vh;
+  min-height: 100vh;
   width: 100% ;
   margin: auto;
 }
@@ -156,7 +161,7 @@ section{
   justify-content: flex-start;
   box-shadow: var(--BoxShadow);
   overflow: hidden;
-  height: 87vh;
+  min-height: 100vh;
 }
 
 #home::after {
@@ -330,6 +335,7 @@ section{
 
 .game img {
   max-width: 80%;
+  height: auto;
   margin: auto;
   display: block;
   border: 3px solid var(--ColorDetalhes);
@@ -355,13 +361,13 @@ section{
 }
 
 .custom-button{
-  padding: 10px 15px;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  padding: clamp(0.5rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
 }
 
 .btn{
-  width: 100px;
-  height: 100px;
+  width: clamp(60px, 15vw, 100px);
+  height: clamp(60px, 15vw, 100px);
   padding: .5rem;
   border: 2px solid var(--ColorDetalhes);
 }
