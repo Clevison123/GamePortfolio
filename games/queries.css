@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+:root{
+  --FontSizeTitulosMobile: clamp(1.5rem, 4.5vw, 2rem);
+  --FontSizeTextosMobile: clamp(0.9rem, 2.5vw, 1.1rem);
+  --FontSizeTitulosDesktop: clamp(2rem, 3.5vw, 2.8rem); 
+  --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 
+}
+
+
+/* ================================= */
+/* 📱 SMALL DEVICES (PHONES) */
+/* ================================= */
+
+/* 📱 Smartphones pequenos (iPhone SE, Galaxy S8, etc.) */
+@media (max-width: 320px){
+
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  .game-card {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  main{
+    margin-top: 4rem;
+  }
+}
+
+/* 📱 Smartphones médios (iPhone X, Galaxy S20, Pixel 5) */
+@media (min-width: 321px) and (max-width: 480px){
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  .game-card {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  main{
+    margin-top: 4rem;
+  }
+}
+
+/* ================================= */
+/* 📟 MEDIUM DEVICES (TABLETS) */
+/* ================================= */
+
+/* 📟 Tablets pequenos (iPad Mini, Kindle Fire, etc.) */
+@media (min-width: 481px) and (max-width: 768px){
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosMobile);
+  }
+
+  .game-card {
+    font-size: var(--FontSizeTextosMobile);
+  }
+
+  main{
+    margin-top: 4rem;
+  }
+}
+
+/* 📟 Tablets grandes (iPad Air, iPad Pro 9.7") */
+@media (min-width: 769px) and (max-width: 1024px){
+
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  .game-card {
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  main{
+    margin-top: 4rem;
+  }
+  
+}
+
+/* ================================= */
+/* 💻 LARGE DEVICES (LAPTOPS & DESKTOPS) */
+/* ================================= */
+
+/* 💻 Notebooks pequenos (MacBook Air, Surface Pro) */
+@media (min-width: 1025px) and (max-width: 1366px){
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  .game-card {
+    width: 270px;
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  main{
+    margin-top: 4.5rem;
+  }
+}
+
+/* 🖥️ Monitores Full HD (Desktops padrão, iMac 21") */
+@media (min-width: 1367px) and (max-width: 1920px){
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  .game-card {
+    width: 270px;
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  main{
+    margin-top: 5rem;
+  }
+}
+
+/* ================================= */
+/* 🖥️ EXTRA LARGE SCREENS (4K & 8K) */
+/* ================================= */
+
+/* 🖥️ Telas 4K (iMac 27", monitores gamers 4K) */
+@media (min-width: 1921px) and (max-width: 2560px){
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  .game-card {
+    width: 270px;
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  main{
+    margin-top: 5rem;
+  }
+}
+
+/* 🖥️ Telas 8K e maiores */
+@media (min-width: 2561px){
+  header{
+    padding: 1rem 0;
+  }
+
+  h1{
+    font-size: var(--FontSizeTitulosDesktop);
+  }
+
+  .game-card {
+    width: 270px;
+    font-size: var(--FontSizeTextosDesktop);
+  }
+
+  main{
+    margin-top: 6rem;
+  }
+}

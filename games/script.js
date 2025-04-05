@@ -2,29 +2,60 @@
 const GameLoader = (function () {
   const container = document.querySelector('.game-container');
   let gameCount = 0;
-  const MAX_GAMES = 50; // ✅ Change this value when you add more games
+
+  // Real game
+  const games = [
+    {
+      title: "Ping Pong",
+      description: "Classic ping pong game!",
+      link: "games/pingpong/index.html",
+      image: "../imgs_games/ping_pong.png"
+    },
+    {
+      title: "Memory Game",
+      description: "Match all the cards!",
+      link: "games/memory/index.html",
+      image: "../imgs_games/memory_game.png"
+    },
+    {
+      title: "Sneak Game",
+      description: "Move the snake, eat the food, and don’t hit the walls!",
+      link: "games/sneak/index.html",
+      image: "../imgs_games/sneak_game.png"
+    },
+    {
+      title: "Rock Paper Scissors",
+      description: "Play Rock, Paper, Scissors against the computer!",
+      link: "games/rock_paper_scissors/index.html",
+      image: "../imgs_games/rock_paper_scissors.png"
+    },
+    // Add More games here
+  ];
+
+  // Max number of games is now based on your list
+  const MAX_GAMES = games.length;
 
   // Create a game card element
-  function createGameCard(index) {
+  function createGameCard(game) {
     const card = document.createElement('div');
     card.className = 'game-card';
     card.innerHTML = `
-      <h3>Game ${index}</h3>
-      <p>Game description goes here.</p>
+    <div class="card-image-wrapper">
+      <img src="${game.image}" alt="${game.title}" class="game-image">
+      </div>
+      <h3>${game.title}</h3>
+      <p>${game.description}</p>
+      <a href="${game.link}" class="button" target="_blank">Play</a>
     `;
     return card;
   }
 
   // Load a specified number of game cards
-  function loadGames(quantity = 10) {
-    // Stop if we've reached the max number of games
-    if (gameCount >= MAX_GAMES) return;
-
+  function loadGames(quantity = 5) {
     const gamesToLoad = Math.min(quantity, MAX_GAMES - gameCount);
-
     for (let i = 0; i < gamesToLoad; i++) {
+      container.appendChild(createGameCard(games[gameCount]));
       gameCount++;
-      container.appendChild(createGameCard(gameCount));
     }
   }
 
@@ -33,17 +64,15 @@ const GameLoader = (function () {
     return window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
   }
 
-  // Scroll event
-  function handleScroll() {
-    if (isBottomOfPage()) {
-      loadGames(10);
-    }
-  }
-
   // Initialize the scroll listener
   function init() {
-    window.addEventListener('scroll', handleScroll);
-    loadGames(15); // Initial load
+    window.addEventListener('scroll', () => {
+      if (isBottomOfPage()) {
+        loadGames(5);
+      }
+    });
+
+    loadGames(5); // Load first few
   }
 
   // Public API

@@ -3,7 +3,7 @@
 :root{
   --FontFamily:'Inter', sans-serif;
   --FontSizeTitulosMobile: clamp(1.5rem, 4.5vw, 2rem);
-  --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); /* 24px*/
+  --FontSizeH3Mobile: clamp(1.2rem, 5vw, 2rem); 
   --FontSizeTextosMobile: clamp(0.9rem, 2.5vw, 1.1rem);
   --FontSizeTitulosDesktop: clamp(2rem, 3.5vw, 2.8rem); 
   --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 

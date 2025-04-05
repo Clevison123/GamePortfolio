@@ -5,7 +5,7 @@
   --ColorDetalhes: #fbbf24;
 
   --FontFamily:'Inter', sans-serif;
-  --FontH1: clamp(1.5rem, 4vw, 3rem);
+  --FontH1: clamp(1.5rem, 3vw, 2rem);
   --FontText: clamp(.85rem, 2vw, 1rem);
 }
 
@@ -52,9 +52,8 @@ main{
   padding: 2rem;
 }
 
-.game-card{
-  width: 200px;
-  height: 250px;
+.game-card {
+  width: 220px;
   background-color: #111827;
   color: white;
   border-radius: 10px;
@@ -62,10 +61,26 @@ main{
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
   text-align: center;
-  cursor: pointer;
+  line-height: 1.5;
 }
+
+.card-image-wrapper {
+  width: 100%;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.game-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block; 
+}
+
 
 .button{
   text-align: center;
