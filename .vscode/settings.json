@@ -28,5 +28,6 @@
     "Textos",
     "Titulos",
     "Variáveis"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }
