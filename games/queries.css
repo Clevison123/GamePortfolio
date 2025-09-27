@@ -7,10 +7,7 @@
   --FontSizeTextosDesktop: clamp(1.1rem, 2vw, 1.25rem); 
 }
 
-
-/* ================================= */
 /* 📱 SMALL DEVICES (PHONES) */
-/* ================================= */
 
 /* 📱 Smartphones pequenos (iPhone SE, Galaxy S8, etc.) */
 @media (max-width: 320px){
@@ -51,9 +48,7 @@
   }
 }
 
-/* ================================= */
 /* 📟 MEDIUM DEVICES (TABLETS) */
-/* ================================= */
 
 /* 📟 Tablets pequenos (iPad Mini, Kindle Fire, etc.) */
 @media (min-width: 481px) and (max-width: 768px){
@@ -95,9 +90,7 @@
   
 }
 
-/* ================================= */
 /* 💻 LARGE DEVICES (LAPTOPS & DESKTOPS) */
-/* ================================= */
 
 /* 💻 Notebooks pequenos (MacBook Air, Surface Pro) */
 @media (min-width: 1025px) and (max-width: 1366px){
@@ -139,9 +132,7 @@
   }
 }
 
-/* ================================= */
 /* 🖥️ EXTRA LARGE SCREENS (4K & 8K) */
-/* ================================= */
 
 /* 🖥️ Telas 4K (iMac 27", monitores gamers 4K) */
 @media (min-width: 1921px) and (max-width: 2560px){
