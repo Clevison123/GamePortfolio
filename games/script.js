@@ -8,25 +8,27 @@ const GameLoader = (function () {
     {
       title: "Ping Pong",
       description: "Classic ping pong game!",
-      link: "games/pingpong/index.html",
+      link: "https://pong-game-fe.netlify.app/",
       image: "../imgs_games/ping_pong.png"
     },
+    /*
     {
       title: "Memory Game",
       description: "Match all the cards!",
       link: "games/memory/index.html",
       image: "../imgs_games/memory_game.png"
     },
+    */
     {
       title: "Sneak Game",
       description: "Move the snake, eat the food, and don’t hit the walls!",
-      link: "games/sneak/index.html",
+      link: "https://snake-game-fe.netlify.app/",
       image: "../imgs_games/sneak_game.png"
     },
     {
       title: "Rock Paper Scissors",
       description: "Play Rock, Paper, Scissors against the computer!",
-      link: "games/rock_paper_scissors/index.html",
+      link: "https://rock-paper-scissors-game-fe.netlify.app/",
       image: "../imgs_games/rock_paper_scissors.png"
     },
     // Add More games here
