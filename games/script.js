@@ -11,14 +11,14 @@ const GameLoader = (function () {
       link: "https://pong-game-fe.netlify.app/",
       image: "../imgs_games/ping_pong.png"
     },
-    /*
+    
     {
       title: "Memory Game",
       description: "Match all the cards!",
-      link: "games/memory/index.html",
+      link: "https://memory-game-fe.netlify.app/",
       image: "../imgs_games/memory_game.png"
     },
-    */
+    
     {
       title: "Sneak Game",
       description: "Move the snake, eat the food, and don’t hit the walls!",
