@@ -210,23 +210,30 @@ section{
 
 .controls {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .prev-btn, .next-btn {
+  position: absolute;
   background: none;
   border: none;
   color: white;
   font-size: clamp(40px, 5vw, 90px);
-  margin: 0 30px;
   cursor: pointer;
 }
+
+.prev-btn {
+  left: 30px; 
+}
+
+.next-btn {
+  right: 30px; 
+}
+
 
 
 /* About Section*/
