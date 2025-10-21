@@ -42,6 +42,15 @@
   scroll-behavior: smooth;
 }
 
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
 img {
   max-width: 100%;
   height: auto;
