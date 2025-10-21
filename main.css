@@ -224,6 +224,8 @@ section{
   color: white;
   font-size: clamp(40px, 5vw, 90px);
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
 .prev-btn {
