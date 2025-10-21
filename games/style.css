@@ -18,6 +18,15 @@
   list-style: none;
 }
 
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
 header{
   position: fixed;
   width: 100%;
