@@ -325,7 +325,7 @@ section{
   font-size: var(--FontSizeTextosMobile);
   max-width: 600px;
   line-height: var(--LineHeightTextos);
-  text-align: justify;
+  text-align: center;
   hyphens: auto;
   word-spacing: -0.5px;
   margin-bottom: 1rem;
