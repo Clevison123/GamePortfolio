@@ -6,6 +6,13 @@ const GameLoader = (function () {
   // Real game
   const games = [
     {
+      title: "Quiz Rápido",
+      description: "Teste seus conhecimentos!",
+      link: "https://pong-game-fe.netlify.app/",
+      image: "../imgs_games/jogo_perguntas.png"
+
+    },
+    {
       title: "Ping Pong",
       description: "Classic ping pong game!",
       link: "https://pong-game-fe.netlify.app/",
