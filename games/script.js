@@ -8,7 +8,7 @@ const GameLoader = (function () {
     {
       title: "Quiz Rápido",
       description: "Teste seus conhecimentos!",
-      link: "https://pong-game-fe.netlify.app/",
+      link: "https://quiz-rapido-fe.netlify.app/",
       image: "../imgs_games/jogo_perguntas.png"
 
     },
